@@ -1,0 +1,26 @@
+server.port: 8081
+
+spring:
+  # Creates the database in a file
+  datasource:
+    url: jdbc:mysql://localhost:3306/clientes
+    username: clientes
+    password: clientes
+  jpa:
+# Generates the database *only* if it's not there yet
+    hibernate.ddl-auto: create-drop
+# For educational purposes we will show the SQL in console
+    properties.hibernate:
+      show_sql: true
+      format_sql: false
+
+#logging
+logging:
+  pattern.file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  file: /tmp/logs/springboot.log
+  level:
+    org:
+      springframework.web: DEBUG
+      hibernate:
+        SQL: DEBUG
+    com.br.shizen: DEBUG

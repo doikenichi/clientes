@@ -11,7 +11,7 @@ buildscript {
 }
 
 apply plugin: 'java'
-apply plugin: 'eclipse'
+apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
@@ -27,5 +27,16 @@ repositories {
 dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-data-jpa')
 	implementation('org.springframework.boot:spring-boot-starter-web')
+	//logging
+	//compile('org.springframework.boot:spring-boot-starter-log4j2')
+	// Use MySQL Connector-J
+	compile('mysql:mysql-connector-java')
+
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
+//
+//configurations {
+//	all {
+//		exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+//	}
+//}

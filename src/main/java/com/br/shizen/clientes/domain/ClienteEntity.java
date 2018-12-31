@@ -1,16 +1,13 @@
 package com.br.shizen.clientes.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
-@Entity
+@Entity(name = "CLIENTES")
 public class ClienteEntity {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name = "ID")
     private BigDecimal id;
 
